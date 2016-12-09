@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>San Francisco Crime Detection</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/vendor/modernizr-2.6.2-respond-1.3.0.min.js"></script>
+<style type="text/css">
+	#header{
+	background-color: #454545;
+	color: #fff;
+	}
+	.menus{
+	font-size: 20px	
+	}
+	#block-container{
+	margin: 85px 15px 15px 15px;
+	}
+	.grey-background{
+	%background-color: #454545;
+	}
+	#menu-content{
+	%border-top: 7px solid #31708f;
+	background-color: #ffffff;
+	padding: 5px 5px;
+	}
+	#body-content{
+	background-color: #fff;
+	}
+	.small-block-header{
+	margin: 10px 10px;
+	padding: 5px;
+	font-size: 24px;
+	font-weight: 800;
+	}
+	.small-block{
+	margin: 5px 15px 30px 15px;
+	padding: 10px;
+	border: 1px solid #aaa;
+	border-left: 15px solid #31708f;
+	min-height: 170px;
+	box-shadow: 10px 10px 5px #888888;
+	}
+	.small-img{
+	float: right;
+	height: 150px;
+	}
+	
+	.week-header{
+	color: #f39c12;
+	}
+	.week-block{
+	border-left: 15px solid #f39c12;
+	}
+	.month-header{
+	color: #373277;
+	}
+	.month-block{
+	border-left: 15px solid #373277;
+	}
+	.year-header{
+	color: #C84101;
+	}
+	.year-block{
+	border-left: 15px solid #C84101;
+	}
+</style>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+	cimeCountPath = "data/cimeCount.json";
+	districtPath = "data/district.json";
+	categoryPath = "data/category.json";
+	csvPath = "data/CrimeDependency.csv";
+	$.getJSON( cimeCountPath, function( crimeCountData ) {
+	document.getElementById('weekCrimeCount').innerHTML = crimeCountData.week_crime_count;
+	document.getElementById('monthCrimeCount').innerHTML = crimeCountData.month_crime_count;
+	document.getElementById('yearCrimeCount').innerHTML = crimeCountData.Year_crime_count;
+	});
+	$.getJSON( districtPath, function( districtData ) {
+	document.getElementById('weekDistrict').innerHTML = districtData.Week_District;
+	document.getElementById('weekDistrictCount').innerHTML = '('+districtData.week_crime_count+')';
+	document.getElementById('monthDistrict').innerHTML = districtData.Month_District;
+	document.getElementById('monthDistrictCount').innerHTML = '('+districtData.month_crime_count+')';
+	document.getElementById('yearDistrict').innerHTML = districtData.Year_District;
+	document.getElementById('yearDistrictCount').innerHTML = '('+districtData.Year_crime_count+')';
+	});
+	
+	$.getJSON( categoryPath, function( categoryData ) {
+	document.getElementById('weekCategory').innerHTML = categoryData.Week_Category;
+	document.getElementById('weekCategoryCount').innerHTML = '('+categoryData.week_crime_count+')';
+	document.getElementById('monthCategory').innerHTML = categoryData.Month_Category;
+	document.getElementById('monthCategoryCount').innerHTML = '('+categoryData.month_crime_count+')';
+	document.getElementById('yearCategory').innerHTML = categoryData.Year_Category;
+	document.getElementById('yearCategoryCount').innerHTML = '('+categoryData.Year_crime_count+')';
+	});
+		
+</script>
+</head>
+<body class="header-fixed-top grey-background">
+<div id="page-container">
+	<header id="header" class="navbar navbar-default navbar-fixed-top">
+		<h1  style="Padding-left:15px">San Francisco Crime - Analysis & Prediction</h1>
+	</header>
+	<div id="page-background">
+		<div id="block-container" class="fx-opacity">
+			<div class="row gutter30">
+				<div class="col-xs-12">
+					<div id="menu-content">
+						<ul class="nav nav-tabs push menus" data-toggle="tabs">
+							<li class="active"><a href="#">Home</a></li>
+							<li> <a href="Analysis.html">Analysis</a> </li>
+							<li> <a href="Prediction.html">Prediction</a> </li>
+						</ul>
+						<div class="tab-content">
+							<div class="small-block-header week-header">
+								Last Week
+							</div>
+							<div class="row gutter30">
+								<div class="col-xs-4">
+									<div class="small-block week-block">
+										<img class="small-img" src="icons/count.png" />
+										<h2>Number of crimes reported</h2>
+										<h2 id="weekCrimeCount" class="text-info"></h2>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<div class="small-block week-block">
+										<img class="small-img" src="icons/location.png" />
+										<h2>Most alarming District</h2>
+										<h2 id="weekDistrict" class="text-danger">District</h2>
+										<h4 id="weekDistrictCount"></h4>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<div class="small-block week-block">
+										<img class="small-img" src="icons/category.png" />
+										<h2>Most happened Crime</h2>
+										<h2 id="weekCategory" style="color:#777">Crime Category</h2>
+										<h4 id="weekCategoryCount"></h4>
+									</div>
+								</div>
+							</div>
+							<div class="small-block-header month-header">
+								Last Month
+							</div>
+							<div class="row gutter30">
+								<div class="col-xs-4">
+									<div class="small-block month-block">
+										<img class="small-img" src="icons/count.png" />
+										<h2>Number of crimes reported</h2>
+										<h2 id="monthCrimeCount" class="text-info"></h2>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<div class="small-block month-block">
+										<img class="small-img" src="icons/location.png" />
+										<h2>Most alarming District</h2>
+										<h2 id="monthDistrict" class="text-danger">District</h2>
+										<h4 id="monthDistrictCount"></h4>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<div class="small-block month-block">
+										<img class="small-img" src="icons/category.png" />
+										<h2>Most happened Crime</h2>
+										<h2 id="monthCategory" style="color:#777">Crime Category</h2>
+										<h4 id="monthCategoryCount"></h4>
+									</div>
+								</div>
+							</div>
+							<div class="small-block-header year-header">
+								Last Year
+							</div>
+							<div class="row gutter30">
+								<div class="col-xs-4">
+									<div class="small-block year-block">
+										<img class="small-img" src="icons/count.png" />
+										<h2>Number of crimes reported</h2>
+										<h2 id="yearCrimeCount" class="text-info"></h2>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<div class="small-block year-block">
+										<img class="small-img" src="icons/location.png" />
+										<h2>Most alarming District</h2>
+										<h2 id="yearDistrict" class="text-danger">District</h2>
+										<h4 id="yearDistrictCount"></h4>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<div class="small-block year-block">
+										<img class="small-img" src="icons/category.png" />
+										<h2>Most happened Crime</h2>
+										<h2 id="yearCategory" style="color:#777">Crime Category</h2>
+										<h4 id="yearCategoryCount"></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+</body>
+</html>

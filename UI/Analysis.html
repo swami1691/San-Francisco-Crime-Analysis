@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>San Francisco Crime Detection</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/vendor/modernizr-2.6.2-respond-1.3.0.min.js"></script>
+<style type="text/css">
+	#header{
+	background-color: #454545;
+	color: #fff;
+	}
+	.menus{
+	font-size: 20px	
+	}
+	#block-container{
+	margin: 85px 15px 15px 15px;
+	}
+	.grey-background{
+	%background-color: #454545;
+	}
+	#menu-content{
+	%border-top: 7px solid #31708f;
+	background-color: #ffffff;
+	padding: 5px 5px;
+	}
+	#body-content{
+	background-color: #fff;
+	}
+	.small-block-header{
+	margin: 10px 0px;
+	font-size: 24px;
+	font-weight: 800;
+	color: #31708f;
+	border-bottom: 15px solid #31708f;	
+	}
+	.small-block{
+	margin: 5px 15px 30px 15px;
+	padding: 10px;
+	border: 1px solid #aaa;
+	border-left: 15px solid #31708f;
+	min-height: 170px;	
+	box-shadow: 10px 10px 5px #888888;
+	}
+	.small-img{
+	float: right;
+	height: 150px;
+	}
+	
+	.yellow-header{
+	color: #f39c12;
+	border-bottom: 15px solid #f39c12;	
+	}
+	.yellow-block{
+	border-left: 15px solid #f39c12;
+	}
+	.purple-header{
+	color: #373277;
+	border-bottom: 15px solid #373277;
+	}
+	.purple-block{
+	border-left: 15px solid #373277;
+	}
+	.orange-header{
+	color: #C84101;
+	border-bottom: 15px solid #C84101;
+	}
+	.orange-block{
+	border-left: 15px solid #C84101;
+	}
+	.CrimeDependency{
+	width: 75%;
+	margin-left: 12.5%;
+	}
+	.CrimeDependency td{
+	padding: 7px 10px;
+	}
+	.CrimeDependency tr:nth-child(even) {
+	background: rgba(51,122,183,0.2);
+	}
+	.CrimeDependency tr:nth-child(odd) {
+	background: #FFF;
+	}
+	.td-right{
+	text-align: right;
+	width: 40%;
+	}
+	.td-left{
+	text-align: left;
+	width: 40%;
+	}
+	.td-icon{
+	height: 200px; 
+	}
+</style>
+
+<script src="js/jquery.js"></script>
+</head>
+<body class="header-fixed-top grey-background">
+<div id="page-container">
+	<header id="header" class="navbar navbar-default navbar-fixed-top">
+		<h1  style="Padding-left:15px">San Francisco Crime - Analysis & Prediction</h1>
+	</header>
+	<div id="page-background">
+		<div id="block-container" class="fx-opacity">
+			<div class="row gutter30">
+				<div class="col-xs-12">
+					<div id="menu-content">
+						<ul class="nav nav-tabs push menus" data-toggle="tabs">
+							<li><a href="Home.html">Home</a></li>
+							<li class="active"><a href="#">Analysis</a> </li>
+							<li><a href="Prediction.html">Prediction</a> </li>
+						</ul>
+						<div class="tab-content">
+							<br>
+							
+							<div class="small-block orange-block">
+								<div class="small-block-header orange-header">
+									Trends Based on Time
+								</div>
+								<div class="row gutter30">
+									<div class="col-xs-6">
+										<div class='tableauPlaceholder' id='viz1481105867108' style='position: relative'>
+											<noscript>
+											<a href='#'><img alt='Criminal offences count on Day basis ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CriminaloffencescountonDaybasis&#47;Sheet6&#47;1_rss.png' style='border: none' /></a>
+											</noscript>
+											<object class='tableauViz' style='display:none;'>
+											<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+											<param name='site_root' value='' />
+											<param name='name' value='CriminaloffencescountonDaybasis&#47;Sheet6' />
+											<param name='tabs' value='no' />
+											<param name='toolbar' value='yes' />
+											<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CriminaloffencescountonDaybasis&#47;Sheet6&#47;1.png' />
+											<param name='animate_transition' value='yes' />
+											<param name='display_static_image' value='yes' />
+											<param name='display_spinner' value='yes' />
+											<param name='display_overlay' value='yes' />
+											<param name='display_count' value='yes' />
+											</object>
+										</div>
+										<script type='text/javascript'>
+										var divElement = document.getElementById('viz1481105867108');
+										var vizElement = divElement.getElementsByTagName('object')[0];
+										vizElement.style.width = '100%';
+										vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+										var scriptElement = document.createElement('script');
+										scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+										vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+										</script>
+									</div>
+									<div class="col-xs-6">
+										<div class='tableauPlaceholder' id='viz1481106411671' style='position: relative'>
+										  <noscript>
+										    <a href='#'><img alt='Criminal offences count on Year basis ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CriminaloffencescountonYearbasis&#47;Sheet7&#47;1_rss.png' style='border: none' /></a>
+										  </noscript>
+										  <object class='tableauViz' style='display:none;'>
+										    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+										    <param name='site_root' value='' />
+										    <param name='name' value='CriminaloffencescountonYearbasis&#47;Sheet7' />
+										    <param name='tabs' value='no' />
+										    <param name='toolbar' value='yes' />
+										    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CriminaloffencescountonYearbasis&#47;Sheet7&#47;1.png' />
+										    <param name='animate_transition' value='yes' />
+										    <param name='display_static_image' value='yes' />
+										    <param name='display_spinner' value='yes' />
+										    <param name='display_overlay' value='yes' />
+										    <param name='display_count' value='yes' />
+										  </object>
+										</div>
+										<script type='text/javascript'>
+										  var divElement = document.getElementById('viz1481106411671');
+										  var vizElement = divElement.getElementsByTagName('object')[0];
+										  vizElement.style.width = '100%';
+										  vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+										  var scriptElement = document.createElement('script');
+										  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+										  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+										</script>
+									</div>
+									<div class="col-xs-12">
+										<div class='tableauPlaceholder' id='viz1481106751264' style='position: relative'>
+										  <noscript>
+										    <a href='#'><img alt='Crime counts based on Month ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CrimecountsbasedonMonth&#47;Sheet1&#47;1_rss.png' style='border: none' /></a>
+										  </noscript>
+										  <object class='tableauViz' style='display:none;'>
+										    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+										    <param name='site_root' value='' />
+										    <param name='name' value='CrimecountsbasedonMonth&#47;Sheet1' />
+										    <param name='tabs' value='no' />
+										    <param name='toolbar' value='yes' />
+										    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CrimecountsbasedonMonth&#47;Sheet1&#47;1.png' />
+										    <param name='animate_transition' value='yes' />
+										    <param name='display_static_image' value='yes' />
+										    <param name='display_spinner' value='yes' />
+										    <param name='display_overlay' value='yes' />
+										    <param name='display_count' value='yes' />
+										  </object>
+										</div>
+										<script type='text/javascript'>
+										  var divElement = document.getElementById('viz1481106751264');
+										  var vizElement = divElement.getElementsByTagName('object')[0];
+										  vizElement.style.width = '100%';
+										  vizElement.style.height = '500px';//(divElement.offsetWidth * 0.75) + 'px';
+										  var scriptElement = document.createElement('script');
+										  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+										  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+										</script>
+									</div>
+								</div>
+							</div>
+							<div class="small-block purple-block">
+								<div class="small-block-header purple-header">
+									Trends Based on Category
+								</div>
+								<div class="row gutter30">
+									<div class="col-xs-12">
+										<div class='tableauPlaceholder' id='viz1481107150336' style='position: relative'>
+											<noscript>
+											<a href='#'><img alt='Count of criminal offences recorded ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Countofcriminaloffencesrecorded&#47;Sheet5&#47;1_rss.png' style='border: none' /></a>
+											</noscript>
+											<object class='tableauViz' style='display:none;'>
+											<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+											<param name='site_root' value='' />
+											<param name='name' value='Countofcriminaloffencesrecorded&#47;Sheet5' />
+											<param name='tabs' value='no' />
+											<param name='toolbar' value='yes' />
+											<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Countofcriminaloffencesrecorded&#47;Sheet5&#47;1.png' />
+											<param name='animate_transition' value='yes' />
+											<param name='display_static_image' value='yes' />
+											<param name='display_spinner' value='yes' />
+											<param name='display_overlay' value='yes' />
+											<param name='display_count' value='yes' />
+											</object>
+										</div>
+										<script type='text/javascript'>
+										var divElement = document.getElementById('viz1481107150336');
+										var vizElement = divElement.getElementsByTagName('object')[0];
+										vizElement.style.width = '100%';
+										vizElement.style.height = '450px';
+										var scriptElement = document.createElement('script');
+										scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+										vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+										</script>
+									</div>
+
+									<div class="col-xs-12">
+										<div class='tableauPlaceholder' id='viz1481107803406' style='position: relative'>
+											<noscript>
+											<a href='#'><img alt='Comparing crime trends with the previous year ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Comparingcrimetrendswiththepreviousyear&#47;Sheet12&#47;1_rss.png' style='border: none' /></a>
+											</noscript>
+											<object class='tableauViz' style='display:none;'>
+											<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+											<param name='site_root' value='' />
+											<param name='name' value='Comparingcrimetrendswiththepreviousyear&#47;Sheet12' />
+											<param name='tabs' value='no' />
+											<param name='toolbar' value='yes' />
+											<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Comparingcrimetrendswiththepreviousyear&#47;Sheet12&#47;1.png' />
+											<param name='animate_transition' value='yes' />
+											<param name='display_static_image' value='yes' />
+											<param name='display_spinner' value='yes' />
+											<param name='display_overlay' value='yes' />
+											<param name='display_count' value='yes' />
+											</object>
+										</div>
+										<script type='text/javascript'>
+										var divElement = document.getElementById('viz1481107803406');
+										var vizElement = divElement.getElementsByTagName('object')[0];
+										vizElement.style.width = '100%';
+										vizElement.style.height = '450px';
+										var scriptElement = document.createElement('script');
+										scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+										vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+										</script>
+									</div>
+									<div class="col-xs-12">
+										<div class='tableauPlaceholder' id='viz1481112939770' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;To&#47;Top3crimepatternanalysis&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Top3crimepatternanalysis&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;To&#47;Top3crimepatternanalysis&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1481112939770');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='869px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</div>
+								</div>
+							</div>
+							<div class="small-block yellow-block">
+								<div class="small-block-header yellow-header">
+									Collar Crimes
+								</div>
+								<div class="row gutter30">
+									<div class="col-xs-12">
+										<div class='tableauPlaceholder' id='viz1481107335069' style='position: relative'>
+											<noscript>
+											<a href='#'><img alt='White Collar Vs Blue Collar Year Wise Crime ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wh&#47;WhiteandBluecollarCrime-YearWise&#47;WhiteCollarVsBlueCollarYearWiseCrime&#47;1_rss.png' style='border: none' /></a>
+											</noscript>
+											<object class='tableauViz' style='display:none;'>
+											<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+											<param name='site_root' value='' />
+											<param name='name' value='WhiteandBluecollarCrime-YearWise&#47;WhiteCollarVsBlueCollarYearWiseCrime' />
+											<param name='tabs' value='no' />
+											<param name='toolbar' value='yes' />
+											<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wh&#47;WhiteandBluecollarCrime-YearWise&#47;WhiteCollarVsBlueCollarYearWiseCrime&#47;1.png' />
+											<param name='animate_transition' value='yes' />
+											<param name='display_static_image' value='yes' />
+											<param name='display_spinner' value='yes' />
+											<param name='display_overlay' value='yes' />
+											<param name='display_count' value='yes' />
+											</object>
+										</div>
+										<script type='text/javascript'>
+										var divElement = document.getElementById('viz1481107335069');
+										var vizElement = divElement.getElementsByTagName('object')[0];
+										vizElement.style.width = '100%';
+										vizElement.style.height = '500px';
+										var scriptElement = document.createElement('script');
+										scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+										vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+										</script>
+									</div>
+									<div class="col-xs-12">
+										<div class='tableauPlaceholder' id='viz1481107490745' style='position: relative'>
+											<noscript>
+											<a href='#'><img alt='White and Blue Collar Crimes ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wh&#47;WhiteCollarandBlueCollarPercentage&#47;WhiteandBlueCollarCrimes&#47;1_rss.png' style='border: none' /></a>
+											</noscript>
+											<object class='tableauViz' style='display:none;'>
+											<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+											<param name='site_root' value='' />
+											<param name='name' value='WhiteCollarandBlueCollarPercentage&#47;WhiteandBlueCollarCrimes' />
+											<param name='tabs' value='no' />
+											<param name='toolbar' value='yes' />
+											<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wh&#47;WhiteCollarandBlueCollarPercentage&#47;WhiteandBlueCollarCrimes&#47;1.png' />
+											<param name='animate_transition' value='yes' />
+											<param name='display_static_image' value='yes' />
+											<param name='display_spinner' value='yes' />
+											<param name='display_overlay' value='yes' />
+											<param name='display_count' value='yes' />
+											</object>
+										</div>
+										<script type='text/javascript'>
+										var divElement = document.getElementById('viz1481107490745');
+										var vizElement = divElement.getElementsByTagName('object')[0];
+										vizElement.style.width = '100%';
+										vizElement.style.height = '500px';
+										var scriptElement = document.createElement('script');
+										scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+										vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+										</script>
+									</div>
+								</div>
+							</div>
+
+							<div class="small-block">
+								<div class="small-block-header">
+									Resolution Based Analysis
+								</div>
+								<div class="row gutter30">
+									<div class="col-xs-12">
+										<div class='tableauPlaceholder' id='viz1481108350308' style='position: relative'>
+										<noscript>
+										<a href='#'><img alt='Criminal offences which come under the Police  department of each district and the resolution made ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CriminaloffencewhichcomeunderthePoliceDepartmentofeachdistrictandtheresolutionmade&#47;Sheet9&#47;1_rss.png'
+										  style='border: none' /></a>
+										</noscript>
+										<object class='tableauViz' style='display:none;'>
+										<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+										<param name='site_root' value='' />
+										<param name='name' value='CriminaloffencewhichcomeunderthePoliceDepartmentofeachdistrictandtheresolutionmade&#47;Sheet9' />
+										<param name='tabs' value='no' />
+										<param name='toolbar' value='yes' />
+										<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CriminaloffencewhichcomeunderthePoliceDepartmentofeachdistrictandtheresolutionmade&#47;Sheet9&#47;1.png' />
+										<param name='animate_transition' value='yes' />
+										<param name='display_static_image' value='yes' />
+										<param name='display_spinner' value='yes' />
+										<param name='display_overlay' value='yes' />
+										<param name='display_count' value='yes' />
+										</object>
+										</div>
+										<script type='text/javascript'>
+										var divElement = document.getElementById('viz1481108350308');
+										var vizElement = divElement.getElementsByTagName('object')[0];
+										vizElement.style.width = '100%';
+										vizElement.style.height = '600px';
+										var scriptElement = document.createElement('script');
+										scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+										vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+										</script>
+									</div>
+									<div class="col-xs-12">
+										<div class='tableauPlaceholder' id='viz1481109311393' style='position: relative'><noscript><a href='#'><img alt='Criminal offences which come under the Police  department of each district and the resolution made. ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CriminaloffenceswhichcomeunderthePolicedepartmentofeachdistrictandtheresolutionmade&#47;Sheet10&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='CriminaloffenceswhichcomeunderthePolicedepartmentofeachdistrictandtheresolutionmade&#47;Sheet10' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CriminaloffenceswhichcomeunderthePolicedepartmentofeachdistrictandtheresolutionmade&#47;Sheet10&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1481109311393');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='600px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</div>
+									<div class="col-xs-4">
+										<div class='tableauPlaceholder' id='viz1481108921758' style='position: relative'><noscript><a href='#'><img alt='Sheet 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Resolution_percent&#47;Sheet2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Resolution_percent&#47;Sheet2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Resolution_percent&#47;Sheet2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1481108921758');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='480px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</div>
+									<div class="col-xs-8">
+										<div class='tableauPlaceholder' id='viz1481109059430' style='position: relative'><noscript><a href='#'><img alt='Resolved cases with respect to the police  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Resolvedcaseswithrespecttothepolicedepartmentdistrict&#47;Sheet4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Resolvedcaseswithrespecttothepolicedepartmentdistrict&#47;Sheet4' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Resolvedcaseswithrespecttothepolicedepartmentdistrict&#47;Sheet4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1481109059430');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='480px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</div>									
+									<div class="col-xs-6">
+										<div class='tableauPlaceholder' id='viz1481111026630' style='position: relative'><noscript><a href='#'><img alt='Incidents by Resoluion ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;IncidentsByResolution&#47;IncidentsbyResoluion&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='IncidentsByResolution&#47;IncidentsbyResoluion' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;IncidentsByResolution&#47;IncidentsbyResoluion&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1481111026630');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='500px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="small-block purple-block">
+								<div class="small-block-header purple-header">
+									Frequent Patterns
+								</div>
+								<div class="row gutter30">									
+									<div class="col-xs-12">
+										<div class='tableauPlaceholder' id='viz1481109621444' style='position: relative'><noscript><a href='#'><img alt='District-Time wise Max Crime ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;District-TimewiseMaxCrime&#47;District-TimewiseMaxCrime&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='District-TimewiseMaxCrime&#47;District-TimewiseMaxCrime' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;District-TimewiseMaxCrime&#47;District-TimewiseMaxCrime&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1481109621444');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='500px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</div>
+									<div class="col-xs-6">
+										<div class='tableauPlaceholder' id='viz1481109452545' style='position: relative'><noscript><a href='#'><img alt='Criminal offence recorded with respect to Hour and Day ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;Crimialoffencerecordedwithrespecttohourandday&#47;Sheet2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Crimialoffencerecordedwithrespecttohourandday&#47;Sheet2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;Crimialoffencerecordedwithrespecttohourandday&#47;Sheet2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1481109452545');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</div>
+									<div class="col-xs-6">
+										<div class='tableauPlaceholder' id='viz1481110636503' style='position: relative'><noscript><a href='#'><img alt='Count of total crimes on week basis and most occured time  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Countoftotalcrimesonweekbasisandmostoccuredtime&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Countoftotalcrimesonweekbasisandmostoccuredtime&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Countoftotalcrimesonweekbasisandmostoccuredtime&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1481110636503');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</div>
+								</div>
+							</div>
+
+							<div class="small-block yellow-block">
+								<div class="small-block-header yellow-header">
+									Association
+								</div>
+								<div class="row gutter30">
+									<div class="col-xs-6">
+										<div class='tableauPlaceholder' id='viz1481110166808' style='position: relative'><noscript><a href='#'><img alt='Associated crimes ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;As&#47;Associatedcrimes&#47;Sheet2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Associatedcrimes&#47;Sheet2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;As&#47;Associatedcrimes&#47;Sheet2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1481110166808');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</div>
+									<div class="col-xs-6">
+										<div class='tableauPlaceholder' id='viz1481110329076' style='position: relative'>
+										  <noscript>
+										    <a href='#'><img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;us&#47;usecase1&#47;Sheet1&#47;1_rss.png' style='border: none' /></a>
+										  </noscript>
+										  <object class='tableauViz' style='display:none;'>
+										    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+										    <param name='site_root' value='' />
+										    <param name='name' value='usecase1&#47;Sheet1' />
+										    <param name='tabs' value='no' />
+										    <param name='toolbar' value='yes' />
+										    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;us&#47;usecase1&#47;Sheet1&#47;1.png' />
+										    <param name='animate_transition' value='yes' />
+										    <param name='display_static_image' value='yes' />
+										    <param name='display_spinner' value='yes' />
+										    <param name='display_overlay' value='yes' />
+										    <param name='display_count' value='yes' />
+										  </object>
+										</div>
+										<script type='text/javascript'>
+										  var divElement = document.getElementById('viz1481110329076');
+										  var vizElement = divElement.getElementsByTagName('object')[0];
+										  vizElement.style.width = '100%';
+										  vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+										  var scriptElement = document.createElement('script');
+										  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+										  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+										</script>
+
+									</div>
+									<div class="col-xs-6">
+									</div>
+									<div class="col-xs-6">
+									</div>
+								</div>
+							</div>
+
+							<div class="small-block orange-block">							
+								<div class="small-block-header orange-header">
+									Dependency
+								</div>
+								<div class="row gutter30">
+									<div class="col-xs-12">
+										<br>
+										<table id="divCrimeDependency" class="CrimeDependency">
+										</table>
+										<br>
+									</div>
+								</div>
+							</div>
+
+							<div class="small-block">
+								<div class="small-block-header">
+									Severity
+								</div>
+								<div class="row gutter30">
+									<div class="col-xs-12">
+										<div class='tableauPlaceholder' id='viz1481113370682' style='position: relative'><noscript><a href='#'><img alt='Incident By Weights ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;IncidentByWeights&#47;IncidentByWeights&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='IncidentByWeights&#47;IncidentByWeights' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;IncidentByWeights&#47;IncidentByWeights&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1481113370682');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='550px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	CrimeDependencyPath = "data/CrimeDependency.json";
+	
+	$.getJSON( CrimeDependencyPath, function( CrimeDependencyData ) {
+		
+		var divCrimeDependencyContent = '';
+		if (CrimeDependencyData.length>0) {
+		divCrimeDependencyContent +='<tr><td class="td-right">'+CrimeDependencyData[0].Category+'</td><td style="text-align:center" rowspan="'+CrimeDependencyData.length+'"><img class="td-icon" src="icons/right.png" /></td><td class="td-left">' +CrimeDependencyData[0].DependsOn+'</tr>';	
+		}
+		for(var ind=1; ind<CrimeDependencyData.length; ind++){
+			divCrimeDependencyContent +='<tr><td class="td-right">'+CrimeDependencyData[ind].Category+'</td><td class="td-left">' +CrimeDependencyData[ind].DependsOn+'</tr>';
+		}
+		document.getElementById('divCrimeDependency').innerHTML = divCrimeDependencyContent;
+	});
+</script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+</body>
+</html>

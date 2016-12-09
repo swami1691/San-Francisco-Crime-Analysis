@@ -1,0 +1,5 @@
+[{"Category":"BRIBERY","Dependency":0.6823361823361823,"DependsOn":"ASSAULT"},
+{"Category":"SECONDARY CODES","Dependency":0.6004424778761062,"DependsOn":"ASSAULT"},
+{"Category":"KIDNAPPING","Dependency":0.5039274924471299,"DependsOn":"ASSAULT"},
+{"Category":"RUNAWAY","Dependency":0.4292079207920792,"DependsOn":"MISSING PERSON"},
+{"Category":"DRIVING UNDER THE INFLUENCE","Dependency":0.4261529480443666,"DependsOn":"OTHER OFFENSES"}]
