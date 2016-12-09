@@ -14,5 +14,10 @@ Data Analysis and Computation :
   3. Tableau For Visluaization 
   4. UI:Embedding of Tableau visualization and visual represenation of results. (HTML/CSS,JavaScript)
   5. Data Mining Association and Dependency
-  6. Apache Spark MLib ( Linear Regression ,Logistic Regression) for prediction
+  6. Apache Spark MLib ( Linear Regression ,Logistic Regression) for Prediction
+  
+  
+  Tableau Public Link :
+  
+  1. https://public.tableau.com/profile/karthikeyan1469#!/
   
